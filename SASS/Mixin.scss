@@ -1,0 +1,31 @@
+@mixin image (){
+    height: 700px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+
+@mixin grid ($cols, $mgn) {
+    float: left;
+    margin-right: $mgn;
+    margin-bottom: $mgn;
+    width: ((100% - (($cols - 1) * $mgn)) / $cols);
+    &:nth-child(#{$cols}n) {
+    margin-right: 0px;
+   
+    }
+}
+
+@mixin mQ($args...){
+  @if length($args) == 1{
+    @media screen and (max-width: nth($args, 1)){
+      @content;
+    }
+  }
+  @if length($args) == 2{
+    @media screen and (max-width: nth($args, 1)) and (min-width: nth($args, 2)){
+      @content;
+    }
+  }
+}
+

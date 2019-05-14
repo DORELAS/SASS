@@ -1,0 +1,161 @@
+
+@import "Mixin";
+
+
+// Variables declared.
+
+$blu: aquamarine;
+$roze: darksalmon;
+$shkrimi: sans-serif;
+$madhesia: 25px;
+
+
+body {
+    background-color: beige; 
+}
+
+//Logoja ne menune kryesore.
+#logo {
+    
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: 10px;
+    float: left;
+    
+}
+
+// Menuja kryesore. 
+
+#main-nav {
+    
+    background-color:$blu;
+    width: 100%;
+    height: 100px;
+    font-size: $madhesia;
+    font-family: $shkrimi;
+    
+    ul{
+        width: 100%;
+    }
+    
+    li {
+        float: left;
+        width: 17%;
+        list-style-type: none;
+        @include mQ(600px){
+            background-color: $blu;
+            transform: translateX(-40px);
+            width: 100%;
+        }
+        }
+
+    a {
+        color: $roze;
+        text-decoration: none;
+        padding: 15px;
+        margin-top: 20px;
+        text-align: center;
+        display: block;
+       
+        &:hover {
+        color: beige;            
+    }
+     
+        &::after{
+        content: " ";
+        clear: both;
+        display: block;
+    }    } }
+
+//Imazhet e vendosura.
+
+.img{
+     @include image;
+     transition: opacity 0.1s ease;
+     transition: box-shadow 0.1s ease;
+    
+    &:hover {
+        opacity: 0.7;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    }
+}
+
+// Projektet e bera stilimi. 
+
+#projects li {
+     @include grid(4, 1%);
+    
+    img {
+        width: 100%;
+    }  
+}
+
+#list {
+    list-style: none;
+    margin-left: 0px;
+    margin-right: 50px;
+}
+// Stilimi per frazat e shkruajtura.
+.text1 {
+    
+ line-height: 25px;
+ font-size: 35px;
+ font-style: normal;
+ font-family: monospace;
+ font-weight: 200px;
+ color: $roze;
+ margin-top: 30px;
+ margin-left: 30px;
+    
+}
+
+//Shiriti i grrupeve te kurseve.
+
+.grupe {
+    li {
+        float: left;
+        width: 25%;
+        list-style: none;
+        padding: 30px;
+        margin-left: 45px;
+        display: block;
+        
+    
+    .course-logo {
+      
+        width: 80px;
+        height: 80px;
+       
+}
+    }
+}
+ //Teksti i shkruajtur ne paragraf per kurset.
+
+     .text {        
+                display: inline-block;
+                text-align: center;
+                text-decoration: none;
+                font-style: normal;
+                color: black;
+                font-size: 20px;
+    &:hover {
+        color: $blu;
+        
+    }
+    
+    &::after {
+        content: " ";
+        clear: both;
+    }
+            
+        }
+//Stilimi i tekstit ne fund te faqes.
+.text2 {
+    color: darkslategrey;
+    font-size: 20px;
+    font-style: normal;
+    margin-left: 30px;
+    margin-right: 30px;
+}
